@@ -12,6 +12,12 @@ public class MainClassTest {
 
     @Test
     public void testGetClassNumber(){
-        Assert.assertTrue("Method returned value <= 45", mainClass.getLocalNumber() > 45);
+        Assert.assertTrue("Method returned value <= 45", mainClass.getClassNumber() > 45);
+    }
+
+    @Test
+    public void testGetClassString(){
+        String actual = mainClass.getClassString();
+        Assert.assertTrue("Substring not found", actual.contains("hello") || actual.contains("Hello"));
     }
 }
