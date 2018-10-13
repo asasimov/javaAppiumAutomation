@@ -11,6 +11,8 @@ public class FirstTest {
 
     private AppiumDriver driver;
 
+    String path = System.getProperty("user.dir");
+
     @Before
     public void setUp() throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -21,7 +23,7 @@ public class FirstTest {
         capabilities.setCapability("automationNane","Appium");
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
-        capabilities.setCapability("app","C:\\JavaAppium\\JavaAppiumAutomation\\apks\\org.wikipedia.apk");
+        capabilities.setCapability("app",path + "\\apks\\org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
