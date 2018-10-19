@@ -35,13 +35,13 @@ public class FirstTest {
 
     @Test
     public void firstTest() {
-        
+
         waitForElementAndClick(
                 By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Search Wikipedia' input",
                 5);
 
-        waitForElementAndSendKeys(
+     /*   waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text,'Search…')]"),
                 "Java", "Cannot find search input",
                 5);
@@ -49,6 +49,12 @@ public class FirstTest {
         waitForElementAndClick(
                 By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Object-oriented programming language' topic by 'Java'",
+                5);   */
+
+        waitTextPresentInElement(
+                By.id("org.wikipedia:id/search_src_text"),
+                "Search…",
+                "Cannot find 'Search…' text in search input",
                 5);
     }
 
@@ -142,6 +148,12 @@ public class FirstTest {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.clear();
         return element;
+    }
+
+    private Boolean waitTextPresentInElement(By by, String expected_text, String error_message, long timeoutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.withMessage(error_message + "\n");
+        return wait.until(ExpectedConditions.textToBe(by, expected_text));
     }
 
     @After
