@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.util.List;
 
 public class FirstTest {
 
@@ -61,6 +62,8 @@ public class FirstTest {
     @Test
     public void testCancelSearch() {
 
+        final String keyword = "Java";
+
         waitForElementAndClick(
                 By.id("org.wikipedia:id/search_container"),
                 "Cannot find 'Search Wikipedia' input",
@@ -68,8 +71,14 @@ public class FirstTest {
 
         waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text,'Search…')]"),
-                "Java", "Cannot find search input",
+                keyword, "Cannot find search input",
                 5);
+
+        // проверяем, что найдено несколько статей
+        List<WebElement> listOfElements = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+        Assert.assertTrue(
+                String.format("Cannot find a some articles with keyword '%s'", keyword),
+                listOfElements.size() >= 2);
 
         waitForElementAndClear(
                 By.id("org.wikipedia:id/search_src_text"),
