@@ -42,16 +42,6 @@ public class FirstTest {
                 "Cannot find 'Search Wikipedia' input",
                 5);
 
-     /*   waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text,'Search…')]"),
-                "Java", "Cannot find search input",
-                5);
-
-        waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot find 'Object-oriented programming language' topic by 'Java'",
-                5);   */
-
         waitTextPresentInElement(
                 By.id("org.wikipedia:id/search_src_text"),
                 "Search…",
@@ -122,7 +112,30 @@ public class FirstTest {
 
         String article_title = title_element.getAttribute("text");
 
-        Assert.assertEquals("We see unexpected tittle","Java (programming language)",article_title);
+        Assert.assertEquals("We see unexpected tittle","Java (programming language)", article_title);
+    }
+
+    @Test
+    public void testFindKeyword(){
+
+        final String keyword = "Java";
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "Cannot find 'Search Wikipedia' input",
+                5);
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                keyword, "Cannot find search input",
+                5);
+
+        List<WebElement> listOfElements = driver.findElements(By.id("org.wikipedia:id/page_list_item_title"));
+        for (WebElement item : listOfElements){
+            Assert.assertTrue(
+                    String.format("Title does not contain a keyword '%s'", keyword),
+                    item.getText().contains(keyword));
+        }
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
