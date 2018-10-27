@@ -17,14 +17,14 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5039">
-              <caret line="447" column="0" lean-forward="false" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+            <state relative-caret-position="337">
+              <caret line="172" column="40" lean-forward="false" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#15785#15786#0" expanded="true" />
-                <element signature="e#15813#15814#0" expanded="true" />
-                <element signature="e#17623#17624#0" expanded="true" />
-                <element signature="e#17652#17653#0" expanded="true" />
+                <element signature="e#17783#17784#0" expanded="true" />
+                <element signature="e#17811#17812#0" expanded="true" />
+                <element signature="e#19621#19622#0" expanded="true" />
+                <element signature="e#19650#19651#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,6 +38,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Java (software platform)</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -192,26 +197,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="FirstTest.testAmountOfEmptySearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="JavaAppiumAutomation" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="testAmountOfEmptySearch" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="JavaAppiumAutomation" />
@@ -240,6 +225,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
       <option name="METHOD_NAME" value="testSearchArticleInBackground" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="FirstTest.testSwipeArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="testSwipeArticle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -313,19 +318,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testSearchArticleInBackground" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testSearchArticleInBackground" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testSwipeArticle" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testSearchArticleInBackground" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testAmountOfEmptySearch" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testSwipeArticle" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testSearchArticleInBackground" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.testChangeScreenOrientationOnSearchResults" />
       </list>
     </recent_temporary>
   </component>
@@ -346,35 +351,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest - 2018.10.27 at 18h 47m 28s.xml">
-      <configuration name="FirstTest" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 18h 53m 17s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testAmountOfEmptySearch - 2018.10.27 at 18h 08m 09s.xml">
-      <configuration name="FirstTest.testAmountOfEmptySearch" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 05m 59s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testAmountOfEmptySearch - 2018.10.27 at 18h 09m 45s.xml">
-      <configuration name="FirstTest.testAmountOfEmptySearch" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 14m 28s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testAmountOfEmptySearch - 2018.10.27 at 18h 10m 38s.xml">
-      <configuration name="FirstTest.testAmountOfEmptySearch" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 15m 43s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testAmountOfEmptySearch - 2018.10.27 at 18h 11m 25s.xml">
-      <configuration name="FirstTest.testAmountOfEmptySearch" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 30m 48s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testAmountOfNotEmptySearch - 2018.10.27 at 17h 52m 39s.xml">
-      <configuration name="FirstTest.testAmountOfNotEmptySearch" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 33m 02s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testAmountOfNotEmptySearch - 2018.10.27 at 17h 53m 40s.xml">
-      <configuration name="FirstTest.testAmountOfNotEmptySearch" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 52m 25s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testChangeScreenOrientationOnSearchResults - 2018.10.27 at 18h 30m 01s.xml">
-      <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 19h 55m 19s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testChangeScreenOrientationOnSearchResults - 2018.10.27 at 18h 32m 22s.xml">
-      <configuration name="FirstTest.testChangeScreenOrientationOnSearchResults" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.10.27 at 20h 00m 29s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testSearchArticleInBackground - 2018.10.27 at 18h 39m 35s.xml">
-      <configuration name="FirstTest.testSearchArticleInBackground" configurationId="JUnit" />
+    <history-entry file="FirstTest_testSwipeArticle - 2018.10.27 at 19h 29m 10s.xml">
+      <configuration name="FirstTest.testSwipeArticle" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -414,7 +419,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -425,10 +430,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15785#15786#0" expanded="true" />
-            <element signature="e#15813#15814#0" expanded="true" />
-            <element signature="e#17623#17624#0" expanded="true" />
-            <element signature="e#17652#17653#0" expanded="true" />
+            <element signature="e#17783#17784#0" expanded="true" />
+            <element signature="e#17811#17812#0" expanded="true" />
+            <element signature="e#19621#19622#0" expanded="true" />
+            <element signature="e#19650#19651#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -455,10 +460,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15785#15786#0" expanded="true" />
-            <element signature="e#15813#15814#0" expanded="true" />
-            <element signature="e#17623#17624#0" expanded="true" />
-            <element signature="e#17652#17653#0" expanded="true" />
+            <element signature="e#17783#17784#0" expanded="true" />
+            <element signature="e#17811#17812#0" expanded="true" />
+            <element signature="e#19621#19622#0" expanded="true" />
+            <element signature="e#19650#19651#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -471,10 +476,10 @@
           <caret line="23" column="103" lean-forward="false" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15785#15786#0" expanded="true" />
-            <element signature="e#15813#15814#0" expanded="true" />
-            <element signature="e#17623#17624#0" expanded="true" />
-            <element signature="e#17652#17653#0" expanded="true" />
+            <element signature="e#17783#17784#0" expanded="true" />
+            <element signature="e#17811#17812#0" expanded="true" />
+            <element signature="e#19621#19622#0" expanded="true" />
+            <element signature="e#19650#19651#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -510,14 +515,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5039">
-          <caret line="447" column="0" lean-forward="false" selection-start-line="447" selection-start-column="0" selection-end-line="447" selection-end-column="0" />
+        <state relative-caret-position="337">
+          <caret line="172" column="40" lean-forward="false" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#15785#15786#0" expanded="true" />
-            <element signature="e#15813#15814#0" expanded="true" />
-            <element signature="e#17623#17624#0" expanded="true" />
-            <element signature="e#17652#17653#0" expanded="true" />
+            <element signature="e#17783#17784#0" expanded="true" />
+            <element signature="e#17811#17812#0" expanded="true" />
+            <element signature="e#19621#19622#0" expanded="true" />
+            <element signature="e#19650#19651#0" expanded="true" />
           </folding>
         </state>
       </provider>

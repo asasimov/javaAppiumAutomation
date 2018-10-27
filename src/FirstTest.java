@@ -231,8 +231,35 @@ public class FirstTest {
                 5);
 
         waitForElementAndClick(
-                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
-                "Cannot find navigation button to My list",
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5);
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Java", "Cannot find search input",
+                5);
+
+        String title_text = "Java (software platform)";
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='" + title_text + "']"),
+                String.format("Cannot find '%s' topic by 'Java'", title_text),
+                5);
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title",
+                15);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find button to open article options",
+                5);
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find option to add article to reading list",
                 5);
 
         waitForElementAndClick(
@@ -240,14 +267,42 @@ public class FirstTest {
                 "Cannot find created folder",
                 5);
 
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot close article, cannot find X link",
+                5);
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Cannot find navigation button to My list",
+                5);
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/item_image_container"),
+                "Cannot find created folder",
+                5);
+
         swipeElementToLeft(
                 By.xpath("//*[@text='Java (programming language)']"),
                 "Cannot find saved article");
 
-        waitForElementNotPresent(
-                By.xpath("//*[@text='Java (programming language)']"),
-                "Cannot delete saved article",
+        waitForElementPresent(
+                By.xpath("//*[@text='" + title_text + "']"),
+                "Cannot find saved article",
                 5);
+
+        waitForElementAndClick(
+                By.xpath("//*[@text='" + title_text + "']"),
+                "Cannot find saved article",
+                5);
+
+        String title = waitForElementAndGetAttribute(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "text",
+                "Cannot find title of article",
+                15);
+
+        Assert.assertEquals("Titles are not equal!", title_text, title);
     }
 
     @Test
@@ -445,7 +500,7 @@ public class FirstTest {
     }
 
     protected void swipeElementToLeft(By by, String error_message){
-        WebElement element = waitForElementPresent(by, error_message, 10);
+        WebElement element = waitForElementPresent(by, error_message, 15);
 
         int left_x = element.getLocation().getX();
         int right_x = left_x + element.getSize().getWidth();
