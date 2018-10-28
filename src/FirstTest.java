@@ -433,6 +433,29 @@ public class FirstTest {
                 5);
     }
 
+    @Test
+    public void testAssertTitle() {
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input",
+                5);
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Java", "Cannot find search input",
+                5);
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' topic by 'Java'",
+                5);
+
+        assertElementPresent(
+                By.id("id:org.wikipedia:id/view_page_title_text"),
+                "The article page does not contain a text title");
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -528,6 +551,19 @@ public class FirstTest {
     private String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeoutInSeconds){
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         return element.getAttribute(attribute);
+    }
+
+    // проверка заголовка статьи без ожидания
+    public void assertElementPresent(By by, String error_message){
+
+        List<WebElement> elements = driver.findElements(by);
+        int article_present = elements.size();
+        for(WebElement element: elements)
+        {
+            String tittle = element.getText();
+            String error = error_message + " " + tittle;
+            Assert.assertTrue(error, article_present > 0);
+        }
     }
 
     @After
