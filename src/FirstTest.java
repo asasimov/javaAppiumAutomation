@@ -35,6 +35,8 @@ public class FirstTest {
         capabilities.setCapability("app",path + "\\apks\\org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+
+        driver.rotate(ScreenOrientation.PORTRAIT);
     }
 
     @Test
@@ -388,18 +390,15 @@ public class FirstTest {
 
         driver.rotate(ScreenOrientation.LANDSCAPE);
 
-        try {
-            String title_after_rotation = waitForElementAndGetAttribute(
+        String title_after_rotation = waitForElementAndGetAttribute(
                     By.id("org.wikipedia:id/view_page_title_text"),
                     "text",
                     "Cannot find title of article",
                     15);
-            Assert.assertEquals("Article title have been changed after screen rotation", title_before_rotation, title_after_rotation);
-        } catch (AssertionError error){
-            throw error;
-        } finally {
-            driver.rotate(ScreenOrientation.PORTRAIT);
-        }
+
+        Assert.assertEquals("Article title have been changed after screen rotation", title_before_rotation, title_after_rotation);
+
+        driver.rotate(ScreenOrientation.PORTRAIT);
 
         String title_after_second_rotation = waitForElementAndGetAttribute(
                 By.id("org.wikipedia:id/view_page_title_text"),
