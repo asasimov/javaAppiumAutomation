@@ -2,6 +2,9 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class SearchPageObject extends MainPageObject {
 
@@ -11,7 +14,8 @@ public class SearchPageObject extends MainPageObject {
             SEARCH_CANCEL_BUTTON = "org.wikipedia:id/search_close_btn",
             SEARCH_RESULT_BY_SUBSTRING_TPL = "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
             SEARCH_RESULT_ELEMENT = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']",
-            SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']";
+            SEARCH_EMPTY_RESULT_ELEMENT = "//*[@text='No results found']",
+            SEARCH_RESULTS = "org.wikipedia:id/page_list_item_title";
 
     public SearchPageObject(AppiumDriver driver){
         super(driver);
@@ -72,6 +76,11 @@ public class SearchPageObject extends MainPageObject {
 
     public void assertThereIsNoResultOfSearch(){
         this.assertElementNotPresent(By.xpath(SEARCH_RESULT_ELEMENT), "We supposed not to find any results");
+    }
+
+    public List<WebElement> searchResultTitles() {
+        List<WebElement> listOfElements = this.waitForElementsPresent(By.id(SEARCH_RESULTS), "Can't find anything by the request", 15);
+        return listOfElements;
     }
 
 }

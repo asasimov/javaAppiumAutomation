@@ -129,4 +129,10 @@ public class MainPageObject {
         }
     }
 
+    protected List<WebElement> waitForElementsPresent(By by, String errorMessage, long timeOutInSeconds) {
+        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+        wait.withMessage(errorMessage + "\n");
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+    }
+
 }
