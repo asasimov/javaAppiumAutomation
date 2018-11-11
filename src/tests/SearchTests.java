@@ -5,7 +5,9 @@ import lib.ui.SearchPageObject;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SearchTests extends CoreTestCase {
 
@@ -68,6 +70,23 @@ public class SearchTests extends CoreTestCase {
             assertTrue(
                     String.format("Search result doesn't contains string '%s'", keyword),
                     item.getText().contains(keyword));
+        }
+    }
+
+    @Test
+    public void testSearchByTitleAndDescription() {
+        String searchText = "Java";
+        SearchPageObject searchPageObject = new SearchPageObject(driver);
+        searchPageObject.initSearchInput();
+        searchPageObject.typeSearchLine(searchText);
+
+        Map<String, String> results = new HashMap<>();
+        results.put("Java version history", "Wikimedia list article");
+        results.put("Java (programming language)", "Object-oriented programming language");
+        results.put("Java (software platform)", "Set of several computer software products and specifications");
+
+        for (Map.Entry<String, String> result : results.entrySet()) {
+            searchPageObject.waitForElementByTitleAndDescription(result.getKey(), result.getValue());
         }
     }
 
