@@ -1,8 +1,10 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.Platform;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 abstract public class SearchPageObject extends MainPageObject {
@@ -38,7 +40,6 @@ abstract public class SearchPageObject extends MainPageObject {
 
     public void waitForCancelButtonToAppear(){
         this.waitForElementPresent(SEARCH_CANCEL_BUTTON, "Cannot find search cancel button.", 5);
-
     }
 
     public void waitForCancelButtonToDisappear(){
@@ -51,8 +52,8 @@ abstract public class SearchPageObject extends MainPageObject {
     }
 
     public void typeSearchLine(String search_line){
+        this.waitForElementAndClear(SEARCH_INPUT, "Cannot find and type into search input.", 5);
         this.waitForElementAndSendKeys(SEARCH_INPUT, search_line, "Cannot find and type into search input.", 5);
-
     }
 
     public void waitForSearchResult(String substring){
@@ -82,9 +83,17 @@ abstract public class SearchPageObject extends MainPageObject {
         this.assertElementNotPresent(SEARCH_RESULT_ELEMENT, "We supposed not to find any results");
     }
 
-    public List<WebElement> searchResultTitles() {
+    public List<String> searchResultTitles() {
         List<WebElement> listOfElements = this.waitForElementsPresent(SEARCH_RESULTS, "Can't find anything by the request", 15);
-        return listOfElements;
+        List<String> resultList = new ArrayList<>();
+        for (WebElement item : listOfElements){
+            if (Platform.getInstance().isAndroid()){
+                resultList.add(item.getAttribute("text"));
+            } else {
+                resultList.add(item.getAttribute("name"));
+            }
+        }
+        return resultList;
     }
 
     public void waitForElementByTitleAndDescription(String title, String description) {

@@ -32,7 +32,8 @@ public class MyListsTests extends CoreTestCase {
         if(Platform.getInstance().isAndroid()) {
             articlePageObject.addArticleToMyList(name_of_folder);
         } else {
-            articlePageObject.addArticlesToMySaved();
+            articlePageObject.addArticleToMySaved();
+            articlePageObject.clickCloseButton();
         }
         articlePageObject.closeArticle();
 
@@ -61,7 +62,14 @@ public class MyListsTests extends CoreTestCase {
 
         ArticlePageObject articlePageObject = ArticlePageObjectFactory.get(driver);
         articlePageObject.waitForTitleElement();
-        articlePageObject.addArticleToMyList(name_of_folder);
+
+        if (Platform.getInstance().isAndroid()){
+            articlePageObject.addArticleToMyList(name_of_folder);
+        } else {
+            articlePageObject.addArticleToMySaved();
+            articlePageObject.clickCloseButton();
+        }
+
         articlePageObject.closeArticle();
 
         searchPageObject.initSearchInput();
@@ -69,14 +77,24 @@ public class MyListsTests extends CoreTestCase {
         searchPageObject.clickByArticleWithSubstring("Appium");
 
         articlePageObject.waitForTitleElement();
-        articlePageObject.addArticleToMySavedList();
+
+        if (Platform.getInstance().isAndroid()){
+            articlePageObject.addArticleToMySavedList();
+        } else {
+            articlePageObject.addArticleToMySaved();
+        }
+
         articlePageObject.closeArticle();
 
         NavigationUI navigationUI = NavigationUIFactory.get(driver);
         navigationUI.clickMyLists();
 
         MyListsPageObject myListsPageObject = MyListsPageObjectFactory.get(driver);
-        myListsPageObject.openFolderByName(name_of_folder);
+
+        if (Platform.getInstance().isAndroid()){
+            myListsPageObject.openFolderByName(name_of_folder);
+        }
+
         myListsPageObject.swipeByArticleToDelete(first_article_title);
         myListsPageObject.openArticleFromSavedFolderByTitle(second_article_title);
 

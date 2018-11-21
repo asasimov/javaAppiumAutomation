@@ -4,7 +4,6 @@ import lib.CoreTestCase;
 import lib.ui.SearchPageObject;
 import lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 
 import java.util.HashMap;
 import java.util.List;
@@ -66,11 +65,11 @@ public class SearchTests extends CoreTestCase {
 
         assertTrue("Too few search results", resultCounter > 1);
 
-        List<WebElement> listOfElements = searchPageObject.searchResultTitles();
-        for (WebElement item : listOfElements) {
+        List<String> listOfElements = searchPageObject.searchResultTitles();
+        for (String item : listOfElements) {
             assertTrue(
                     String.format("Search result doesn't contains string '%s'", keyword),
-                    item.getText().contains(keyword));
+                    item.contains(keyword));
         }
     }
 

@@ -15,7 +15,8 @@ abstract public class ArticlePageObject extends MainPageObject {
             MY_LIST_NAME_INPUT,
             MY_LIST_OK_BUTTON,
             CLOSE_ARTICLE_BUTTON,
-            MY_LIST_ELEMENT;
+            MY_LIST_ELEMENT,
+            CLOSE_BUTTON;
 
     public ArticlePageObject(AppiumDriver driver) {
         super(driver);
@@ -99,8 +100,12 @@ abstract public class ArticlePageObject extends MainPageObject {
                 5);
     }
 
-    public void addArticlesToMySaved(){
+    public void addArticleToMySaved(){
         this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option to add article to reading list", 5);
+    }
+
+    public void clickCloseButton(){
+        this.waitForElementAndClick(CLOSE_BUTTON, "Cannot find close button", 5);
     }
 
 }
