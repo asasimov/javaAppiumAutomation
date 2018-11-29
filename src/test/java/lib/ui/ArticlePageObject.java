@@ -113,7 +113,7 @@ abstract public class ArticlePageObject extends MainPageObject {
         if (Platform.getInstance().isMW()) {
             this.removeArticleFromSavedIfItAdded();
         }
-        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option to add article to reading list", 5);
+        this.waitForElementAndClick(OPTIONS_ADD_TO_MY_LIST_BUTTON, "Cannot find option to add article to reading list", 10);
     }
 
     public void clickCloseButton(){
@@ -125,11 +125,16 @@ abstract public class ArticlePageObject extends MainPageObject {
             this.waitForElementAndClick(
                     OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
                     "Cannot click button to remove an article from saved",
-                    1);
-            this.waitForElementPresent(
+                    5);
+            this.waitForElementNotPresent(
                     OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
-                    "Cannot find button to add an article to saved list after removing it from this list before.");
+                    "Cannot find button to add an article to saved list after removing it from this list before.",
+                    5);
         }
+    }
+
+    public boolean articlePresentInMyList(){
+        return !this.isElementPresent(OPTIONS_ADD_TO_MY_LIST_BUTTON);
     }
 
 }

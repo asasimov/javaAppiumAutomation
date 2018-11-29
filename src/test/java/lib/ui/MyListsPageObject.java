@@ -50,7 +50,7 @@ abstract public class MyListsPageObject extends MainPageObject {
                 15);
     }
 
-    public void swipeByArticleToDelete(String article_title) throws InterruptedException {
+    public void swipeByArticleToDelete(String article_title) {
 
         this.waitForArticleToAppearByTitle(article_title);
         String article_xpath = getSavedArticleXpathByTitle(article_title);
@@ -62,15 +62,13 @@ abstract public class MyListsPageObject extends MainPageObject {
         } else {
             String remove_locator = getRemoveButtonByTitle(article_title);
             this.waitForElementAndClick(remove_locator, "Cannot click button to remove article from saved", 10);
+
+            this.waitForElementNotPresent(remove_locator, "Delete article button is still present.", 10);
+            driver.navigate().refresh();
         }
 
         if(Platform.getInstance().isIOS()){
             this.clickElementToTheRightUpperCorner(article_xpath, "Cannot find saved article");
-        }
-
-        if (Platform.getInstance().isMW()){
-            Thread.sleep(1000);
-            driver.navigate().refresh();
         }
 
         this.waitForArticleToDisappearByTitle(article_title);
